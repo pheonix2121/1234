@@ -1,0 +1,26 @@
+const getButter = () => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve('Butter');
+    }, 2000);
+  });
+}
+
+const getColdDrinks = (ingredient) => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve(`${ingredient} and Cold Drinks`);
+    }, 2000);
+  });
+}
+
+getButter()
+  .then((butter) => {
+    return getColdDrinks(butter);
+  })
+  .then((result) => {
+    console.log(result);
+  })
+  .catch((error) => {
+    console.log(error);
+  });
